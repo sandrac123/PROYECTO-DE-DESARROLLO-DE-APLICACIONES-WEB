@@ -1,0 +1,77 @@
+# Node modules (Node.js)
+
+node_modules/
+
+# Archivos de proudcción /build
+
+dist/
+build/
+
+# Dependencias empaquetadas
+
+package-lock.json
+yaro.lock
+
+# Archivos temporales de sistema operativo
+
+.DS_Store
+Thumbs.db
+
+# Configuraciones de editores de texto
+
+.vcscode/
+.idea/
+_.sublime-workscape
+_.sublime-project
+
+# Archivos de entorno (con variables sensibles)
+
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Logs
+
+_.log
+npm-debug.log_
+yarn-debug.log*
+yarn-error.log*
+
+# Cache de npm/yarn
+
+.npm/
+.yarn/
+
+# Archivos de PHP
+
+vendor /
+composer.lock
+
+# Archivos de test coverage
+
+coverage/
+
+# Arhcivos generados por phpMyAdmin
+
+_.sql
+_.dump
+
+# Archivos de base de datos locales
+
+_.sqlite
+_.sqlite3
+\*.db
+
+# Otros temporales
+
+tmp/
+temp/
+\*.tmp
+
+# Backups
+
+_.back
+_.old
+\*.orig

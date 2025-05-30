@@ -1,4 +1,11 @@
 <?php
+
+$host = "localhost";
+$usuario = "root";
+$senha = "";
+$base_datos = "web";
+
+
 $conexion = new mysqli("localhost", "root", "", "web");
 
 if ($conexion->connect_error) {
@@ -34,6 +41,8 @@ $preguntas = [
     "¿Cómo calificarías la presentación del producto o servicio?" => $presentacionProducto,
     "¿Cómo fue tu relación con otros consumidores o usuarios?" => $relacionConOtros,
     "¿Tienes algún comentario adicional?" => $comentarioAdicional,
+    "¿Tienes alguna sugerencia para mejorar nuestros productos o servicios?" => $comentarioAdicional
+
 ];
 
 // Buscar los IDs de las preguntas en la base de datos
@@ -58,4 +67,3 @@ foreach ($preguntas as $texto_pregunta => $respuesta) {
 $conexion->close();
 
 echo "Gracias por completar la encuesta.";
-?>

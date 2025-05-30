@@ -1,4 +1,4 @@
-# PROYECTO DE DESARROLLO DE APLICACIONES WEB
+# 📊 Proyecto de Encuestas Web
 
 Este proyecto tiene como objetivo el desarrollo de aplicaciones web modernas utilizando buenas prácticas de programación, diseño responsivo y tecnologías actuales.
 
@@ -13,26 +13,28 @@ Este proyecto tiene como objetivo el desarrollo de aplicaciones web modernas uti
 ## Tecnologías utilizadas
 
 - HTML5, CSS3, JavaScript (ES6+)
-- Frameworks/librerías frontend (por ejemplo: React, Angular o Vue)
 - Node.js y Express para el backend
 - Base de datos (por ejemplo: MongoDB, MySQL o PostgreSQL)
 - Control de versiones con Git
+- phpMyAdmin
+- BootStrap
+- PHP
 
 ## Instalación
 
 1. Clona el repositorio:
-    ```
-    git clone <URL-del-repositorio>
-    ```
+   ```
+   git clone <URL-del-repositorio>
+   ```
 2. Instala las dependencias:
-    ```
-    npm install
-    ```
+   ```
+   npm install
+   ```
 3. Configura las variables de entorno según el archivo `.env.example`.
 4. Inicia la aplicación:
-    ```
-    npm start
-    ```
+   ```
+   npm start
+   ```
 
 ## Contribución
 
@@ -42,4 +44,36 @@ Las contribuciones son bienvenidas. Por favor, abre un issue o realiza un pull r
 
 Este proyecto está bajo la licencia MIT.
 
-##
+## Estructura del proyecto
+
+```
+├── backend/                  # Lógica del servidor y API
+│   ├── controllers/         # Controladores de rutas
+│   ├── models/              # Modelos de base de datos
+│   ├── routes/              # Definición de rutas
+│   ├── middlewares/         # Middlewares personalizados
+│   ├── config/              # Configuración y variables de entorno
+│   ├── app.js               # Archivo principal del backend
+│   └── package.json         # Dependencias del backend
+│
+├── frontend/                 # Aplicación cliente (interfaz de usuario)
+│   ├── public/              # Archivos estáticos
+│   ├── src/                 # Código fuente del frontend
+│   │   ├── components/      # Componentes reutilizables
+│   │   ├── pages/           # Vistas o páginas principales
+│   │   ├── App.jsx          # Componente principal
+│   │   └── index.js         # Punto de entrada
+│   └── package.json         # Dependencias del frontend
+│
+├── database/                 # Scripts y archivos de base de datos
+│   └── schema.sql           # Esquema de la base de datos
+│
+├── .env.example              # Ejemplo de variables de entorno
+├── .gitignore                # Archivos y carpetas ignorados por Git
+├── README.md                 # Documentación principal del proyecto
+└── LICENSE                   # Licencia del proyecto
+```
+
+## configuración
+
+Puedes crear un archivo .env en la raiz del sistema
