@@ -12,11 +12,11 @@ if ($conexion->connect_error) {
     die("Error de conexión: " . $conexion->connect_error);
 }
 
-date_default_timezone_set('Europe/Madrid'); // Ajusta según tu zona horaria
-$usuario_id = 1; // Aquí deberías obtenerlo dinámicamente (por sesión, por ejemplo)
+date_default_timezone_set('Europe/Madrid');
+$usuario_id = 1;
 $fecha = date("Y-m-d H:i:s");
 
-// Recoge los datos del formulario
+
 $frecuenciaCompras = $_POST['frecuencia_compras'];
 $lugarCompra = $_POST['lugar_compra'];
 $recomienda = $_POST['recomienda'];
@@ -28,8 +28,7 @@ $presentacionProducto = $_POST['presentacion_producto'];
 $relacionConOtros = $_POST['relacion_con_otros'];
 $comentarioAdicional = $_POST['comentario_adicional'];
 
-// Puedes definir manualmente los IDs de preguntas si sabes cuáles son en la BD.
-// Aquí se insertan como texto abierto (preguntas tipo 'abierta')
+//
 $preguntas = [
     "¿Con qué frecuencia realizas tus compras?" => $frecuenciaCompras,
     "¿Dónde compra la mayoría de los productos que utiliza?" => $lugarCompra,
@@ -45,7 +44,7 @@ $preguntas = [
 
 ];
 
-// Buscar los IDs de las preguntas en la base de datos
+
 foreach ($preguntas as $texto_pregunta => $respuesta) {
     $stmt = $conexion->prepare("SELECT id FROM preguntas WHERE texto = ?");
     $stmt->bind_param("s", $texto_pregunta);
@@ -54,7 +53,7 @@ foreach ($preguntas as $texto_pregunta => $respuesta) {
     if ($stmt->fetch()) {
         $stmt->close();
 
-        // Insertar la respuesta
+
         $insert = $conexion->prepare("INSERT INTO respostas (usuario_id, pregunta_id, texto_resposta, data) VALUES (?, ?, ?, ?)");
         $insert->bind_param("iiss", $usuario_id, $pregunta_id, $respuesta, $fecha);
         $insert->execute();

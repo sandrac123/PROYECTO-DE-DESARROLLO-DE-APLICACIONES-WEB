@@ -24,11 +24,7 @@ Este proyecto tiene como objetivo el desarrollo de aplicaciones web modernas uti
 
 1. Clona el repositorio:
 
-   git clone
-
-   ```
-
-   ```
+   git clone https://github.com/sandrac123/PROYECTO-DE-DESARROLLO-DE-APLICACIONES-WEB.git
 
 2. Instala las dependencias:
    ```
