@@ -3,7 +3,7 @@
 $DB_HOST = 'localhost';    
 $DB_NAME = 'web';     
 $DB_USER = 'root';   
-$DB_PASS = 'contraseña';   
+$DB_PASS = '';   
 
 /* ──────────────────────── CONEXIÓN PDO ─────────────────────────── */
 try {
