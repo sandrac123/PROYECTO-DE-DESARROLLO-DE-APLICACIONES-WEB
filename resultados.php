@@ -2,7 +2,7 @@
 session_start();
 
 // Conexión á base de datos
-$pdo = new PDO("mysql:host=localhost;dbname=enquisa_db;charset=utf8", "user", "pass");
+$pdo = new PDO("mysql:host=localhost;dbname=web;charset=utf8", "user", "pass");
 
 // Verifica ID de enquisa
 $enquisa_id = $_GET['id'] ?? null;
