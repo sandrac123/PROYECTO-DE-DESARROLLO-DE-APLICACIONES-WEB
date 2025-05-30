@@ -1,5 +1,6 @@
 const encuestas = [
-    { id: 1, nombre: "Satisfacción del cliente" },
-    { id: 2, nombre: "Evaluación docente" },
+    { id: 1, nombre: "Encuesta de Hábitos de consumo"},
+    { id: 2, nombre: "Ecuesta Premium"},
+    { id: 3, nombre: "Valoracion del curso"},
   ];
   
