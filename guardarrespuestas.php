@@ -1,7 +1,7 @@
 <?php
 /* ──────────────────────── ❶ CONFIGURACIÓN ───────────────────────── */
 $DB_HOST = 'localhost';    
-$DB_NAME = 'web.sql';     
+$DB_NAME = 'web';     
 $DB_USER = 'root';   
 $DB_PASS = 'contraseña';   
 
