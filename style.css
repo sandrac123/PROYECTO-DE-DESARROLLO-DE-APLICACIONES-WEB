@@ -1,0 +1,42 @@
+h1 {
+    background-color: bisque;
+    color: darkblue;
+    font-family: Arial, sans-serif;
+    font-size: 2em;
+    text-align: center;
+    padding: 20px;
+    border: 2px solid darkblue;
+}
+
+p {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: #333;
+    margin: 20px;
+}
+
+nav {
+    background-color: #61ebc8de;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    flex: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+    color: purple;
+    font-family: hervetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
