@@ -1,9 +1,9 @@
 <?php
 /* ──────────────────────── ❶ CONFIGURACIÓN ───────────────────────── */
-$DB_HOST = 'localhost';       // o la IP / dominio de tu servidor MySQL
-$DB_NAME = 'encuesta_db';     // pon aquí tu base de datos real
-$DB_USER = 'usuario_mysql';   // tu usuario MySQL
-$DB_PASS = 'contraseña';      // su contraseña
+$DB_HOST = 'localhost';    
+$DB_NAME = 'web.sql';     
+$DB_USER = 'root';   
+$DB_PASS = 'contraseña';   
 
 /* ──────────────────────── CONEXIÓN PDO ─────────────────────────── */
 try {
