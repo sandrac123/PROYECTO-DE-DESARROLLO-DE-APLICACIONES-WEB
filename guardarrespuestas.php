@@ -12,8 +12,9 @@ try {
     $pdo = new PDO("mysql:host=localhost;dbname=web;charset=utf8mb4", 'root', '', [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
     ]);
+    echo "✅ Conexión exitosa.";
 } catch (PDOException $e) {
-    die("❌ Conexión fallida: " . $e->getMessage());
+    echo "❌ Conexión fallida: " . $e->getMessage();
 }
 
 // Obtener datos
