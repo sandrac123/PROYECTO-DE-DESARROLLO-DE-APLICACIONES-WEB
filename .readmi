@@ -15,7 +15,7 @@ Este proyecto tiene como objetivo el desarrollo de aplicaciones web modernas uti
 - HTML5, CSS3, JavaScript (ES6+)
 - Node.js y Express para el backend
 - Base de datos (por ejemplo: MongoDB, MySQL o PostgreSQL)
-- Control de versiones con Git
+- Control de versiones Git
 - phpMyAdmin
 - BootStrap
 - PHP
@@ -23,9 +23,13 @@ Este proyecto tiene como objetivo el desarrollo de aplicaciones web modernas uti
 ## Instalación
 
 1. Clona el repositorio:
+
+   git clone
+
    ```
-   git clone <URL-del-repositorio>
+
    ```
+
 2. Instala las dependencias:
    ```
    npm install
