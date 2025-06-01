@@ -1,9 +1,9 @@
 <?php
 // --- Configuración da base de datos ---
 $DB_HOST = 'localhost';
-$DB_NAME = 'enquisa_db';  // CAMBIA ao nome real da túa base
-$DB_USER = 'usuario';
-$DB_PASS = 'contrasinal';
+$DB_NAME = 'web';  
+$DB_USER = 'root';
+$DB_PASS = '';
 
 // --- Conexión coa base de datos ---
 try {
