@@ -18,7 +18,6 @@ yaro.lock
 Thumbs.db
 
 # Configuraciones de editores de texto
-
 .vcscode/
 .idea/
 _.sublime-workscape

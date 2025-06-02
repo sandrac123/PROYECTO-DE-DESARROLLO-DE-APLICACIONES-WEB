@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Encuesta de Hábitos de Consumo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js principal -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <!-- Plugin para etiquetas dentro de los gráficos -->
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <style>
+    body{
+      background-image:url('habitosconsumo.jpg');
+      background-size:cover;
+      background-position:center;
+      background-repeat:no-repeat;
+      font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;
+      color:#fff;
+    }
+
+    .overlay{
+      background-color:rgba(0,0,0,.6);
+      padding:3rem;
+      border-radius:10px
+    }
+
+    .form-control,.form-select,textarea{
+      background:#ffffffcc;
+      border:none;
+      color:#000
+    }
+
+    .btn-custom{
+      background:#3e0fe9;
+      color:#fff;
+      border:none
+    }
+
+    .btn-custom:hover{
+      background:#218838
+    }
+
+    canvas{
+      max-height:280px
+    }
+  </style>
+</head>
+<body>
+  <!-- NAVBAR CONSERVADA -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark bg-gradient">
+    <div class="container">
+      <a class="navbar-brand" href="#">Encuestas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+      <button class="btn btn-warning my-3" onclick="toggleEncuesta()">Activar/Desactivar Encuesta</button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Sobre Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Regístrate</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Usuarios</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Categorías</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <script>function toggleEncuesta(){const o=document.querySelector('.overlay');o.style.display=o.style.display==='none'||o.style.display===''?'block':'none'};</script>
+
+  <!-- FORMULARIO ORIGINAL -->
+  <div class="container my-5">
+    <div class="overlay">
+      <h1 class="mb-4">Encuesta sobre Hábitos de Consumo</h1>
+      <p class="mb-4">Tus respuestas son valiosas y nos permitirán mejorar nuestros servicios.</p>
+      <form id="encuesta">
+        <!-- FRECUENCIA TEXTO NO GRAFICABLE -->
+        <div class="mb-3">
+          <label for="frecuenciaCompras" class="form-label">¿Con qué frecuencia realizas tus compras?</label>
+          <input type="text" class="form-control" id="frecuenciaCompras" name="frecuencia_compras" placeholder="Con frecuencia">
+        </div>
+        <!-- LUGAR COMPRA -->
+        <div class="mb-3">
+          <label class="form-label">¿Dónde compra la mayoría de los productos que utiliza?</label>
+          <select class="form-select" name="lugar_compra" required>
+            <option disabled selected value="">Selecciona una opción</option>
+            <option>En tiendas oficiales</option>
+            <option>Online</option>
+            <option>Supermercados</option>
+          </select>
+        </div>
+        <!-- RECOMIENDA -->
+        <div class="mb-3">
+          <label class="form-label">¿Le recomendaría nuestro producto/servicio a otros clientes?</label><br>
+          <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="recomienda" value="Sí" required><label class="form-check-label">Sí</label></div>
+          <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="recomienda" value="No"><label class="form-check-label">No</label></div>
+          <div class="form-check form-check-inline"><input class="form-check-input" type="radio" name="recomienda" value="No sé"><label class="form-check-label">No sé</label></div>
+        </div>
+        <!-- CALIFICACIÓN ATENCIÓN -->
+        <div class="mb-3">
+          <label class="form-label">¿Cómo calificarías la atención recibida?</label>
+          <select class="form-select" name="calificacion_atencion" required>
+            <option disabled selected value="">Selecciona una opción</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </div>
+        <!-- MÉTODO PAGO -->
+        <div class="mb-3">
+          <label class="form-label">¿Qué métodos de pago prefiere?</label>
+          <select class="form-select" name="metodo_pago" required>
+            <option disabled selected value="">Selecciona una opción</option>
+            <option>Tarjeta de crédito</option><option>Transferencia bancaria</option><option>PayPal</option><option>Efectivo</option>
+          </select>
+        </div>
+        <!-- FACTORES DECISIÓN -->
+        <div class="mb-3">
+          <label class="form-label">¿Qué factores influyen en sus decisiones de compra?</label>
+          <select class="form-select" name="factores_decision" required>
+            <option disabled selected value="">Selecciona una opción</option>
+            <option>Precio</option><option>Calidad</option><option>Recomendaciones</option><option>Marca</option>
+          </select>
+        </div>
+        <!-- PRESENTACIÓN PRODUCTO -->
+        <div class="mb-3">
+          <label class="form-label">¿Cómo calificarías la presentación del producto o servicio?</label>
+          <select class="form-select" name="presentacion_producto" required>
+            <option disabled selected value="">Selecciona una opción</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </div>
+        <!-- RELACIÓN CON OTROS -->
+        <div class="mb-3">
+          <label class="form-label" for="ea">¿Cómo fue tu relación con otros consumidores o usuarios?</label>
+          <select name="relacion_con_otros" id="ea" class="form-select" required>
+            <option disabled selected value="">Selecciona una opción</option>
+            <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          </select>
+        </div>
+        <!-- COMENTARIOS (no gráfico) -->
+        <div class="mb-3"><label class="form-label">¿Tienes algún comentario adicional?</label><textarea class="form-control" name="comentario_adicional" rows="2" placeholder="Escribe tu opinión personal..."></textarea></div>
+        <button type="submit" class="btn btn-custom w-100">Enviar respuestas</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- SECCIÓN RESULTADOS -->
+  <div class="container mb-5">
+    <div class="overlay">
+      <h2 class="h4 text-center mb-4">Resultados en Tiempo Real</h2>
+      <!-- Contenedores de gráficos -->
+      <div class="row text-center text-white gy-4">
+        <div class="col-md-6"><p class="fw-bold mb-1">Lugar de Compra</p><canvas id="graficoLugar"></canvas></div>
+        <div class="col-md-6"><p class="fw-bold mb-1">Recomendación</p><canvas id="graficoRecomienda"></canvas></div>
+        <div class="col-md-6"><p class="fw-bold mb-1">Método de Pago</p><canvas id="graficoPago"></canvas></div>
+        <div class="col-md-6"><p class="fw-bold mb-1">Factores de Decisión</p><canvas id="graficoFactor"></canvas></div>
+        <div class="col-md-6"><p class="fw-bold mb-1">Calificación Atención</p><canvas id="graficoAtencion"></canvas></div>
+        <div class="col-md-6"><p class="fw-bold mb-1">Presentación Producto</p><canvas id="graficoPresentacion"></canvas></div>
+        <div class="col-md-6"><p class="fw-bold mb-1">Relación con Otros</p><canvas id="graficoRelacion"></canvas></div>
+      </div>
+    </div>
+  </div>
+
+<script>
+  // Paleta pastel profesional
+  const colores=['#A5D8FF','#FFEC99','#B2F2BB','#FFD6A5','#D0BFFF','#FFC9C9','#FFDEB4'];
+
+  // Datasets iniciales
+  const datos={
+    lugar:[0,0,0],
+    recomienda:[0,0,0],
+    pago:[0,0,0,0],
+    factor:[0,0,0,0],
+    atencion:[0,0,0,0,0],
+    presentacion:[0,0,0,0,0],
+    relacion:[0,0,0,0,0]
+  };
+
+  // Registrar plugin para mostrar etiquetas dentro de los segmentos
+  Chart.register(ChartDataLabels);
+
+  // Configuración base para todos los gráficos
+  const opcionesPie={
+    plugins:{
+      legend:{position:'bottom'},
+      datalabels:{
+        // Mostrar solo si el valor es > 0 (cuando algún cliente selecciona la opción)
+        display:(context)=>context.dataset.data[context.dataIndex]>0,
+        color:'#000',
+        font:{weight:'bold'},
+        formatter:(value,context)=>context.chart.data.labels[context.dataIndex]
+      }
+    }
+  };
+
+  // Creación de gráficos con etiquetas internas
+  const charts={
+    graficoLugar:new Chart(document.getElementById('graficoLugar'),{type:'pie',data:{labels:['En tiendas oficiales','Online','Supermercados'],datasets:[{data:datos.lugar,backgroundColor:colores}]},options:opcionesPie}),
+    graficoRecomienda:new Chart(document.getElementById('graficoRecomienda'),{type:'pie',data:{labels:['Sí','No','No sé'],datasets:[{data:datos.recomienda,backgroundColor:colores}]},options:opcionesPie}),
+    graficoPago:new Chart(document.getElementById('graficoPago'),{type:'pie',data:{labels:['Tarjeta','Transferencia','PayPal','Efectivo'],datasets:[{data:datos.pago,backgroundColor:colores}]},options:opcionesPie}),
+    graficoFactor:new Chart(document.getElementById('graficoFactor'),{type:'pie',data:{labels:['Precio','Calidad','Recomendaciones','Marca'],datasets:[{data:datos.factor,backgroundColor:colores}]},options:opcionesPie}),
+    graficoAtencion:new Chart(document.getElementById('graficoAtencion'),{type:'pie',data:{labels:['1','2','3','4','5'],datasets:[{data:datos.atencion,backgroundColor:colores}]},options:opcionesPie}),
+    graficoPresentacion:new Chart(document.getElementById('graficoPresentacion'),{type:'pie',data:{labels:['1','2','3','4','5'],datasets:[{data:datos.presentacion,backgroundColor:colores}]},options:opcionesPie}),
+    graficoRelacion:new Chart(document.getElementById('graficoRelacion'),{type:'pie',data:{labels:['1','2','3','4','5'],datasets:[{data:datos.relacion,backgroundColor:colores}]},options:opcionesPie})
+  };
+
+  // Manejo de envío del formulario
+  document.getElementById('encuesta').addEventListener('submit',e=>{
+    e.preventDefault();
+    const f=e.target;
+    // Lugar
+    const idxLugar=charts.graficoLugar.data.labels.indexOf(f.lugar_compra.value);
+    if(idxLugar>=0){datos.lugar[idxLugar]++;charts.graficoLugar.update();}
+    // Recomienda
+    const recom=f.querySelector('input[name="recomienda"]:checked').value;
+    const idxRecom=charts.graficoRecomienda.data.labels.indexOf(recom);
+    if(idxRecom>=0){datos.recomienda[idxRecom]++;charts.graficoRecomienda.update();}
+    // Pago
+    const idxPago=charts.graficoPago.data.labels.indexOf(f.metodo_pago.value.replace('Tarjeta de crédito','Tarjeta'));
+    if(idxPago>=0){datos.pago[idxPago]++;charts.graficoPago.update();}
+    // Factor decisión
+    const idxFactor=charts.graficoFactor.data.labels.indexOf(f.factores_decision.value);
+    if(idxFactor>=0){datos.factor[idxFactor]++;charts.graficoFactor.update();}
+    // Atencion
+    const idxAt=f.calificacion_atencion.value-1; if(idxAt>=0){datos.atencion[idxAt]++;charts.graficoAtencion.update();}
+    // Presentacion
+    const idxPre=f.presentacion_producto.value-1; if(idxPre>=0){datos.presentacion[idxPre]++;charts.graficoPresentacion.update();}
+    // Relacion
+    const idxRel=f.relacion_con_otros.value-1; if(idxRel>=0){datos.relacion[idxRel]++;charts.graficoRelacion.update();}
+
+    // Opcional: enviar a servidor aquí...
+    alert('¡Gracias por participar!');
+    f.reset();
+  });
+</script>
+
+<footer class="text-center py-3"><p class="mb-0">© 2025 Encuestas Empresa – Todos los derechos reservados.</p></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -14,7 +14,7 @@ Este proyecto tiene como objetivo el desarrollo de aplicaciones web modernas uti
 
 - HTML5, CSS3, JavaScript (ES6+)
 - Node.js y Express para el backend
-- Base de datos (por ejemplo: MongoDB, MySQL o PostgreSQL)
+- Base de datos (Mysql)
 - Control de versiones Git
 - phpMyAdmin
 - BootStrap
@@ -77,3 +77,16 @@ Este proyecto está bajo la licencia MIT.
 ## configuración
 
 Puedes crear un archivo .env en la raiz del sistema
+
+
+## FUNCIONAMIENTO
+1. El proyecto consiste en una página principal a través de la cual pinchando en un enlace puedes acceder a las tres enquisas
+
+- Enquisa Premium
+- Enquisa De Eventos
+- Enquisa de Valoración del curso
+
+2. El usuario entrara en la página del enlace y rellenara los datos de forma que los resultados se guarden en una base de datos. 
+3. Mediiante un gráfico se observaran los resultados de la encuesta
+
+
