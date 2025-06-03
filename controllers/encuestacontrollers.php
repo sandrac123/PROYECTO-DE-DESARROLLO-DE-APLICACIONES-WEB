@@ -1,7 +1,7 @@
 <?php
 // filepath: controllers/EncuestaController.php
-require_once __DIR__ . '/../models/Database.php';
-require_once __DIR__ . '/../models/Encuesta.php';
+require_once __DIR__ . '/../models/database.php';
+require_once __DIR__ . '/../models/encuestas.php';
 
 class EncuestaController
 {
