@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,39 +8,117 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <!-- Chart.js + plugin datalabels -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
 
-    *{
-    box-sizing:border-box;
-    margin:0;
-    padding:0
-}
 
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #eef2f5;
+      color: #333;
+      padding: 60px 20px
+    }
 
-    body{
-    font-family:'Inter',sans-serif;
-    background-color:#eef2f5;
-    color:#333;
-    padding:60px 20px
-}
+    .container {
+      max-width: 780px;
+      margin: auto;
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, .1)
+    }
 
-    .container{max-width:780px;margin:auto;background-color:#fff;padding:40px;border-radius:16px;box-shadow:0 8px 24px rgba(0,0,0,.1)}
-    h1{text-align:center;color:#4b2d52;margin-bottom:6px;font-size:2rem}
-    .description{text-align:center;color:#7f8c8d;margin-bottom:32px;font-size:.975rem}
-    .form-group{margin-bottom:22px}
-    label{display:block;font-weight:600;margin-bottom:8px}
-    input[type=text],input[type=email],select,textarea{width:100%;padding:12px;border:1px solid #ccc;border-radius:8px;font-size:1rem}
-    .options{display:flex;gap:18px;margin-top:10px;flex-wrap:wrap}
-    .options label{font-weight:400}
-    .btn-submit{display:inline-block;width:100%;background-color:#785c8f;color:#fff;font-weight:600;padding:12px;border:none;border-radius:8px;font-size:16px;cursor:pointer;transition:background-color .3s;margin-top:22px}
-    .btn-submit:hover{background-color:#624a73}
-    canvas{max-height:260px}
-    .charts-wrapper{margin-top:60px}
-    .chart-box{padding:20px}
-    @media(max-width:650px){canvas{max-height:220px}}
+    h1 {
+      text-align: center;
+      color: #4b2d52;
+      margin-bottom: 6px;
+      font-size: 2rem
+    }
+
+    .description {
+      text-align: center;
+      color: #7f8c8d;
+      margin-bottom: 32px;
+      font-size: .975rem
+    }
+
+    .form-group {
+      margin-bottom: 22px
+    }
+
+    label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px
+    }
+
+    input[type=text],
+    input[type=email],
+    select,
+    textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem
+    }
+
+    .options {
+      display: flex;
+      gap: 18px;
+      margin-top: 10px;
+      flex-wrap: wrap
+    }
+
+    .options label {
+      font-weight: 400
+    }
+
+    .btn-submit {
+      display: inline-block;
+      width: 100%;
+      background-color: #785c8f;
+      color: #fff;
+      font-weight: 600;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color .3s;
+      margin-top: 22px
+    }
+
+    .btn-submit:hover {
+      background-color: #624a73
+    }
+
+    canvas {
+      max-height: 260px
+    }
+
+    .charts-wrapper {
+      margin-top: 60px
+    }
+
+    .chart-box {
+      padding: 20px
+    }
+
+    @media(max-width:650px) {
+      canvas {
+        max-height: 220px
+      }
+    }
   </style>
 </head>
+
 <body>
   <div class="container">
     <h1>Encuesta de Valoración del Curso</h1>
@@ -72,7 +151,11 @@
         <label>¿Cómo calificarías el contenido del curso?</label>
         <select name="contenido" required>
           <option disabled selected value="">Selecciona una opción</option>
-          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
         </select>
       </div>
 
@@ -107,7 +190,11 @@
         <label>¿El curso cumplió tus expectativas?</label>
         <select name="cumplio_expectativas" required>
           <option disabled selected value="">Selecciona una opción</option>
-          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
         </select>
       </div>
 
@@ -115,7 +202,11 @@
         <label>¿La interacción con el profesor fue positiva?</label>
         <select name="interaccion_profesor" required>
           <option disabled selected value="">Selecciona una opción</option>
-          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
         </select>
       </div>
 
@@ -143,117 +234,118 @@
     </div>
   </div>
 
-<script>
-  // === Colores beige & violeta ===
-  const coloresBV=['#EBDCCB','#D4B2D8','#FFE5B4','#C3AED6','#B8B0D0','#F7ECDD','#E0C9E6'];
+  <script>
 
-  // === Datos iniciales ===
-  const datos={
-    curso:[0,0,0,0],
-    primera:[0,0,0],
-    contenido:[0,0,0,0,0],
-    interes:[0,0,0],
-    recomendacion:[0,0,0],
-    material:[0,0,0],
-    cumplio:[0,0,0,0,0],
-    interaccion:[0,0,0,0,0]
-  };
+    const coloresBV = ['#EBDCCB', '#D4B2D8', '#FFE5B4', '#C3AED6', '#B8B0D0', '#F7ECDD', '#E0C9E6'];
 
-  // Registrar datalabels
-  Chart.register(ChartDataLabels);
+    // === Datos iniciales ===
+    const datos = {
+      curso: [0, 0, 0, 0],
+      primera: [0, 0, 0],
+      contenido: [0, 0, 0, 0, 0],
+      interes: [0, 0, 0],
+      recomendacion: [0, 0, 0],
+      material: [0, 0, 0],
+      cumplio: [0, 0, 0, 0, 0],
+      interaccion: [0, 0, 0, 0, 0]
+    };
 
-  // === Configuraciones ===
-  const optsBarY={
-    indexAxis:'y',
-    scales:{x:{beginAtZero:true,ticks:{color:'#555'}}},
-    plugins:{
-      legend:{display:false},
-      datalabels:{
-        color:'#333',
-        anchor:'end',
-        align:'right',
-        font:{weight:'bold'},
-        formatter:(v,ctx)=>v>0?ctx.chart.data.labels[ctx.dataIndex]:''
+    // Registrar datalabels
+    Chart.register(ChartDataLabels);
+
+    // === Configuraciones ===
+    const optsBarY = {
+      indexAxis: 'y',
+      scales: { x: { beginAtZero: true, ticks: { color: '#555' } } },
+      plugins: {
+        legend: { display: false },
+        datalabels: {
+          color: '#333',
+          anchor: 'end',
+          align: 'right',
+          font: { weight: 'bold' },
+          formatter: (v, ctx) => v > 0 ? ctx.chart.data.labels[ctx.dataIndex] : ''
+        }
       }
-    }
-  };
+    };
 
-  const optsDoughnut={
-    plugins:{
-      legend:{position:'bottom'},
-      datalabels:{
-        color:'#333',
-        font:{weight:'bold'},
-        formatter:(v,ctx)=>v>0?ctx.chart.data.labels[ctx.dataIndex]:''
+    const optsDoughnut = {
+      plugins: {
+        legend: { position: 'bottom' },
+        datalabels: {
+          color: '#333',
+          font: { weight: 'bold' },
+          formatter: (v, ctx) => v > 0 ? ctx.chart.data.labels[ctx.dataIndex] : ''
+        }
       }
+    };
+
+    // === Creación de gráficos ===
+    const charts = {
+      graficoCurso: new Chart(document.getElementById('graficoCurso'), { type: 'doughnut', data: { labels: ['Desarrollo Web', 'Diseño UX/UI', 'Aprendizaje Automático', 'Marketing Digital'], datasets: [{ data: datos.curso, backgroundColor: coloresBV }] }, options: optsDoughnut }),
+      graficoPrimera: new Chart(document.getElementById('graficoPrimera'), { type: 'bar', data: { labels: ['Sí', 'No', 'No sé'], datasets: [{ data: datos.primera, backgroundColor: coloresBV }] }, options: optsBarY }),
+      graficoContenido: new Chart(document.getElementById('graficoContenido'), { type: 'bar', data: { labels: ['1', '2', '3', '4', '5'], datasets: [{ data: datos.contenido, backgroundColor: coloresBV }] }, options: optsBarY }),
+      graficoInteres: new Chart(document.getElementById('graficoInteres'), { type: 'bar', data: { labels: ['Sí', 'No', 'No sé'], datasets: [{ data: datos.interes, backgroundColor: coloresBV }] }, options: optsBarY }),
+      graficoRecomendacion: new Chart(document.getElementById('graficoRecomendacion'), { type: 'bar', data: { labels: ['Sí', 'No', 'No sé'], datasets: [{ data: datos.recomendacion, backgroundColor: coloresBV }] }, options: optsBarY }),
+      graficoMaterial: new Chart(document.getElementById('graficoMaterial'), { type: 'bar', data: { labels: ['Sí', 'No', 'No sé'], datasets: [{ data: datos.material, backgroundColor: coloresBV }] }, options: optsBarY }),
+      graficoCumplio: new Chart(document.getElementById('graficoCumplio'), { type: 'bar', data: { labels: ['1', '2', '3', '4', '5'], datasets: [{ data: datos.cumplio, backgroundColor: coloresBV }] }, options: optsBarY }),
+      graficoInteraccion: new Chart(document.getElementById('graficoInteraccion'), { type: 'bar', data: { labels: ['1', '2', '3', '4', '5'], datasets: [{ data: datos.interaccion, backgroundColor: coloresBV }] }, options: optsBarY })
+    };
+
+    // === Funciones ===
+    function toggleEncuesta() {
+      const f = document.getElementById('formCurso');
+      f.style.display = f.style.display === 'none' ? 'block' : 'none';
     }
-  };
 
-  // === Creación de gráficos ===
-  const charts={
-    graficoCurso:new Chart(document.getElementById('graficoCurso'),{type:'doughnut',data:{labels:['Desarrollo Web','Diseño UX/UI','Aprendizaje Automático','Marketing Digital'],datasets:[{data:datos.curso,backgroundColor:coloresBV}]},options:optsDoughnut}),
-    graficoPrimera:new Chart(document.getElementById('graficoPrimera'),{type:'bar',data:{labels:['Sí','No','No sé'],datasets:[{data:datos.primera,backgroundColor:coloresBV}]},options:optsBarY}),
-    graficoContenido:new Chart(document.getElementById('graficoContenido'),{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{data:datos.contenido,backgroundColor:coloresBV}]},options:optsBarY}),
-    graficoInteres:new Chart(document.getElementById('graficoInteres'),{type:'bar',data:{labels:['Sí','No','No sé'],datasets:[{data:datos.interes,backgroundColor:coloresBV}]},options:optsBarY}),
-    graficoRecomendacion:new Chart(document.getElementById('graficoRecomendacion'),{type:'bar',data:{labels:['Sí','No','No sé'],datasets:[{data:datos.recomendacion,backgroundColor:coloresBV}]},options:optsBarY}),
-    graficoMaterial:new Chart(document.getElementById('graficoMaterial'),{type:'bar',data:{labels:['Sí','No','No sé'],datasets:[{data:datos.material,backgroundColor:coloresBV}]},options:optsBarY}),
-    graficoCumplio:new Chart(document.getElementById('graficoCumplio'),{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{data:datos.cumplio,backgroundColor:coloresBV}]},options:optsBarY}),
-    graficoInteraccion:new Chart(document.getElementById('graficoInteraccion'),{type:'bar',data:{labels:['1','2','3','4','5'],datasets:[{data:datos.interaccion,backgroundColor:coloresBV}]},options:optsBarY})
-  };
+    // === Envío de formulario ===
+    document.getElementById('formCurso').addEventListener('submit', function (e) {
+      e.preventDefault();
+      const f = e.target;
 
-  // === Funciones ===
-  function toggleEncuesta(){
-    const f=document.getElementById('formCurso');
-    f.style.display=f.style.display==='none'?'block':'none';
-  }
+      // Curso
+      const idxCurso = charts.graficoCurso.data.labels.indexOf(f.curso.value);
+      if (idxCurso >= 0) { datos.curso[idxCurso]++; charts.graficoCurso.update(); }
 
-  // === Envío de formulario ===
-  document.getElementById('formCurso').addEventListener('submit',function(e){
-    e.preventDefault();
-    const f=e.target;
+      // Primera vez
+      const primera = f.querySelector('input[name="primera_vez"]:checked').value;
+      const idxPrimera = charts.graficoPrimera.data.labels.indexOf(primera);
+      if (idxPrimera >= 0) { datos.primera[idxPrimera]++; charts.graficoPrimera.update(); }
 
-    // Curso
-    const idxCurso=charts.graficoCurso.data.labels.indexOf(f.curso.value);
-    if(idxCurso>=0){datos.curso[idxCurso]++;charts.graficoCurso.update();}
+      // Contenido
+      const idxCont = parseInt(f.contenido.value) - 1; if (idxCont >= 0) { datos.contenido[idxCont]++; charts.graficoContenido.update(); }
 
-    // Primera vez
-    const primera=f.querySelector('input[name="primera_vez"]:checked').value;
-    const idxPrimera=charts.graficoPrimera.data.labels.indexOf(primera);
-    if(idxPrimera>=0){datos.primera[idxPrimera]++;charts.graficoPrimera.update();}
+      // Interés en formación
+      const interes = f.querySelector('input[name="interes_formacion"]:checked').value;
+      const idxInteres = charts.graficoInteres.data.labels.indexOf(interes);
+      if (idxInteres >= 0) { datos.interes[idxInteres]++; charts.graficoInteres.update(); }
 
-    // Contenido
-    const idxCont=parseInt(f.contenido.value)-1; if(idxCont>=0){datos.contenido[idxCont]++;charts.graficoContenido.update();}
+      // Recomendación
+      const recomend = f.querySelector('input[name="recomendacion"]:checked').value;
+      const idxRecom = charts.graficoRecomendacion.data.labels.indexOf(recomend);
+      if (idxRecom >= 0) { datos.recomendacion[idxRecom]++; charts.graficoRecomendacion.update(); }
 
-    // Interés en formación
-    const interes=f.querySelector('input[name="interes_formacion"]:checked').value;
-    const idxInteres=charts.graficoInteres.data.labels.indexOf(interes);
-    if(idxInteres>=0){datos.interes[idxInteres]++;charts.graficoInteres.update();}
+      // Material útil
+      const material = f.querySelector('input[name="material_util"]:checked').value;
+      const idxMat = charts.graficoMaterial.data.labels.indexOf(material);
+      if (idxMat >= 0) { datos.material[idxMat]++; charts.graficoMaterial.update(); }
 
-    // Recomendación
-    const recomend=f.querySelector('input[name="recomendacion"]:checked').value;
-    const idxRecom=charts.graficoRecomendacion.data.labels.indexOf(recomend);
-    if(idxRecom>=0){datos.recomendacion[idxRecom]++;charts.graficoRecomendacion.update();}
+      // Cumplió expectativas
+      const idxCum = parseInt(f.cumplio_expectativas.value) - 1; if (idxCum >= 0) { datos.cumplio[idxCum]++; charts.graficoCumplio.update(); }
 
-    // Material útil
-    const material=f.querySelector('input[name="material_util"]:checked').value;
-    const idxMat=charts.graficoMaterial.data.labels.indexOf(material);
-    if(idxMat>=0){datos.material[idxMat]++;charts.graficoMaterial.update();}
+      // Interacción profesor
+      const idxInt = parseInt(f.interaccion_profesor.value) - 1; if (idxInt >= 0) { datos.interaccion[idxInt]++; charts.graficoInteraccion.update(); }
 
-    // Cumplió expectativas
-    const idxCum=parseInt(f.cumplio_expectativas.value)-1; if(idxCum>=0){datos.cumplio[idxCum]++;charts.graficoCumplio.update();}
+      // Mostrar sección resultados al menos la primera vez
+      document.getElementById('seccionResultados').style.display = 'block';
 
-    // Interacción profesor
-    const idxInt=parseInt(f.interaccion_profesor.value)-1; if(idxInt>=0){datos.interaccion[idxInt]++;charts.graficoInteraccion.update();}
+      // Guardar en localStorage (opcional)
+      localStorage.setItem('valoracion_curso', JSON.stringify(datos));
 
-    // Mostrar sección resultados al menos la primera vez
-    document.getElementById('seccionResultados').style.display='block';
-
-    // Guardar en localStorage (opcional)
-    localStorage.setItem('valoracion_curso',JSON.stringify(datos));
-
-    alert('✅ ¡Gracias por completar la encuesta!');
-    f.reset();
-  });
-</script>
+      alert('✅ ¡Gracias por completar la encuesta!');
+      f.reset();
+    });
+  </script>
 </body>
+
 </html>

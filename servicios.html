@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Servicios</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .servicios {
+            padding: 60px 20px;
+            background-color: #ffffff;
+            text-align: center;
+        }
+
+        .titulo {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .servicio {
+            background-color: #f1f1f1;
+            padding: 25px;
+            border-radius: 12px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .servicio:hover {
+            transform: translateY(-5px);
+        }
+
+        .icono {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #2980b9;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="servicios">
+        <div class="container">
+            <h2 class="titulo">Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <div class="servicio">
+                    <i class="icono">🎉</i>
+                    <h3>Eventos</h3>
+                    <p>Encuestas personalizadas para evaluar la experiencia de asistentes a eventos corporativos,
+                        culturales o sociales.</p>
+                </div>
+                <div class="servicio">
+                    <i class="icono">🛒</i>
+                    <h3>Hábitos de consumo</h3>
+                    <p>Recopilamos datos sobre preferencias de compra, marcas favoritas y tendencias del consumidor.</p>
+                </div>
+                <div class="servicio">
+                    <i class="icono">🎓</i>
+                    <h3>Formación</h3>
+                    <p>Evaluaciones de cursos, talleres o formaciones internas para medir la satisfacción y el
+                        aprendizaje.</p>
+                </div>
+                <div class="servicio">
+                    <i class="icono">✈️</i>
+                    <h3>Viajes</h3>
+                    <p>Estudios sobre destinos preferidos, hábitos de viaje y experiencias turísticas.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

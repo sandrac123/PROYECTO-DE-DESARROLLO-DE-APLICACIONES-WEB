@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contacto | EncuestasApp</title>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<style>
+    /* === Tipografía y base === */
+body {
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #e0f7fa, #fce4ec);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* === Títulos === */
+h1, h2, h3 {
+  font-weight: 700;
+  color: #37474f;
+}
+
+/* === Tarjetas y formularios === */
+.card {
+  border: none;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  background-color: #ffffffcc;
+  backdrop-filter: blur(10px);
+}
+
+.card-title {
+  color: #00796b;
+}
+
+/* === Inputs personalizados === */
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #00796b;
+  box-shadow: 0 0 0 4px rgba(0, 150, 136, 0.15);
+}
+
+/* === Botón principal === */
+.btn-primary {
+  background-color: #00796b;
+  border: none;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #004d40;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* === Pie de página de contacto === */
+.contact-footer {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.map-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  clip-path: polygon(0 10%, 10% 0, 90% 0, 100% 10%, 100% 90%, 90% 100%, 10% 100%, 0 90%);
+  box-shadow: 0 10px 30px rgba(0, 150, 136, 0.4);
+  transform: scale(1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: floatIn 1s ease-out both;
+}
+
+.map-container:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 40px rgba(0, 150, 136, 0.5);
+}
+
+.map-container iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+}
+
+/* Animación de entrada */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+.map-co
+
+/* === Iframe de mapa === */
+iframe {
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* === Animaciones suaves === */
+input, textarea, button {
+  transition: all 0.2s ease-in-out;
+}
+
+   </style>
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-8 col-lg-6">
+        <div class="card shadow rounded-4">
+          <div class="card-body p-5">
+            <h1 class="card-title text-center mb-4">Contáctanos</h1>
+            <p class="text-center text-muted mb-4">¿Tienes dudas o sugerencias sobre nuestras encuestas? Escríbenos aquí.</p>
+
+            <form action="/enviar-contacto" method="POST">
+              <div class="mb-3">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="email" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="5" required></textarea>
+              </div>
+
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
+              </div>
+            </form>
+
+            <hr class="my-4">
+
+            <div class="text-center small text-muted">
+              También puedes escribirnos a: 
+              <a href="mailto:contacto@starencuestasapp.com" class="text-decoration-none">contacto@encuestasapp.com</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mapa (opcional) -->
+        <div class="mt-5 rounded-4 overflow-hidden shadow-sm">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1458.2768006628085!2d-9.024049311257965!3d43.029782353478346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd2ecf67c6e6c081%3A0xab712e62eb624a7c!2zQmHDrcOxYXMsIDE1MTI3IFZpbWlhbnpvLCBMYSBDb3J1w7Fh!5e0!3m2!1ses!2ses!4v1748881014498!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade",
+            width="100%" 
+            height="250" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy"
+            class="rounded-4">
+          </iframe>
+          <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/683dc8eee4683b190d6141c4/1isolhpae';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->    
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

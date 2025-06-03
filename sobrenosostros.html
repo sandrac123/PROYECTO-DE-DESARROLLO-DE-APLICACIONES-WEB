@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>StarEncuestas</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        aside {
+            width: 240px;
+            background-color: #eaeaea;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid #ccc;
+        }
+
+        aside h2 {
+            color: #1a73e8;
+            font-size: 1.8em;
+            margin-bottom: 30px;
+        }
+
+        aside nav a {
+            display: block;
+            color: #444;
+            text-decoration: none;
+            margin: 15px 0;
+            padding: 10px;
+            border-radius: 6px;
+            transition: background 0.3s;
+        }
+
+        aside nav a:hover {
+            background-color: #dcdcdc;
+        }
+
+        main {
+            flex: 1;
+            padding: 40px;
+            background-color: #ffffff;
+        }
+
+        .hero {
+            background-color: #e3f2fd;
+            padding: 40px;
+            border-radius: 12px;
+            color: #0d47a1;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        section h3 {
+            color: #1a73e8;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+        }
+
+        ul.features {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul.features li {
+            background-color: #f8f8f8;
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            border-left: 4px solid #1a73e8;
+            border-radius: 6px;
+        }
+
+        .images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .images img {
+            width: 100%;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 1px solid #ccc;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            font-size: 0.9em;
+            color: #777;
+            background-color: #f1f1f1;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            aside {
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-around;
+                padding: 15px;
+                border-right: none;
+                border-bottom: 1px solid #ccc;
+            }
+
+            aside nav a {
+                margin: 0 10px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .images {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <aside>
+        <div>
+            <h2>StarEncuestas</h2>
+            <nav>
+                <a href="paginaprincipal.html">Inicio</a>
+                <a href="sobrenosostros.html">Nosotros</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+        <p style="font-size: 0.8em;">© 2025 StarEncuestas</p>
+    </aside>
+
+    <main>
+        <div class="hero">
+            <h1>Conecta con tu audiencia</h1>
+            <p>StarEncuestas es una plataforma confiable para recopilar opiniones mediante encuestas digitales adaptadas
+                a tus necesidades.</p>
+        </div>
+
+        <section>
+            <h3>Nuestra Misión</h3>
+            <p>Facilitar el diálogo real entre empresas y personas, promoviendo decisiones basadas en información
+                concreta y transparente.</p>
+        </section>
+
+        <section>
+            <h3>¿Qué nos hace diferentes?</h3>
+            <ul class="features">
+                <li>Resultados en tiempo real</li>
+                <li>Diseño intuitivo para todos los usuarios</li>
+                <li>No requiere registro previo</li>
+                <li>Protección de datos garantizada (RGPD)</li>
+                <li>Adaptable a cualquier marca</li>
+                <li>Soporte profesional 24/7</li>
+            </ul>
+        </section>
+
+        <section class="images">
+            <img src="Diseñoimagen.png" alt="Interfaz de encuesta" />
+            <img src="08_ENCUESTA-1024x683.webp" alt="Ejemplo de participación" />
+        </section>
+
+        <section>
+            <h3>Compromiso con la privacidad</h3>
+            <p>Los datos de los usuarios son completamente anónimos y se utilizan exclusivamente para análisis de
+                resultados. Tu confianza es nuestra prioridad.</p>
+        </section>
+
+        <footer>
+            StarEncuestas — Información basada en datos reales para decisiones inteligentes.
+        </footer>
+    </main>
+</body>
+
+</html>
